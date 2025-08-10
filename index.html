@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sachin Kumar Yadav | Orthopedic & Sports Surgeon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-teal: #0d9488;
+            --light-bg: #f0f9ff;
+            --dark-text: #0f172a;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #0d9488 100%);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary-blue);
+            border: 4px solid #bfdbfe;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 24px;
+            width: 2px;
+            height: calc(100% - 24px);
+            background: #bfdbfe;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .blog-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-blue);
+        }
+        
+        .blog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .blog-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .blog-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(59, 130, 246, 0.5);
+            animation: pulse 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secondary-blue), transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-blue-900">Dr. Sachin Kumar Yadav</h1>
+                <p class="text-sm text-blue-600">MBBS, MS (Ortho) | Orthopedic & Sports Surgeon</p>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover:text-blue-600 transition font-medium">About</a></li>
+                    <li><a href="#experience" class="hover:text-blue-600 transition font-medium">Experience</a></li>
+                    <li><a href="#skills" class="hover:text-blue-600 transition font-medium">Skills</a></li>
+                    <li><a href="#education" class="hover:text-blue-600 transition font-medium">Education</a></li>
+                    <li><a href="#contact" class="hover:text-blue-600 transition font-medium">Contact</a></li>
+                    <li><a href="#blog" class="hover:text-blue-600 transition font-medium">Blog</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-blue-800">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="#about" class="block py-2 hover:text-blue-600 font-medium">About</a></li>
+                    <li><a href="#experience" class="block py-2 hover:text-blue-600 font-medium">Experience</a></li>
+                    <li><a href="#skills" class="block py-2 hover:text-blue-600 font-medium">Skills</a></li>
+                    <li><a href="#education" class="block py-2 hover:text-blue-600 font-medium">Education</a></li>
+                    <li><a href="#contact" class="block py-2 hover:text-blue-600 font-medium">Contact</a></li>
+                    <li><a href="#blog" class="block py-2 hover:text-blue-600 font-medium">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full floating-element"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 bg-white rounded-full floating-element" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/3 right-1/4 w-32 h-32 bg-white rounded-full floating-element" style="animation-delay: 2s;"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Orthopedic & Sports Surgeon</h2>
+                    <p class="text-2xl text-blue-100 mb-6">Specialist in Arthroscopic Surgeries & Joint Preservation</p>
+                    <p class="text-blue-50 mb-8 text-lg">Providing comprehensive orthopedic care with a focus on minimally invasive techniques and personalized treatment plans.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-white hover:bg-blue-50 text-blue-900 px-8 py-4 rounded-lg shadow-lg transition font-semibold text-center">Get in Touch</a>
+                        <a href="#skills" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-lg shadow-lg transition font-semibold text-center">View Expertise</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl relative">
+                            <div class="w-full h-full bg-gradient-to-br from-blue-200 to-teal-200 flex items-center justify-center">
+                                <!-- <i class="fas fa-user-md text-8xl text-blue-800"></i> -->
+                                  <div class="flex items-center space-x-4">
+
+  <img src="drsachiny.png" alt="Doctor Image"  >
+</div>
+
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="pulse-ring"></div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                            <i class="fas fa-stethoscope text-3xl text-blue-600"></i>
+                        </div>
+                        <div class="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg">
+                            <i class="fas fa-running text-3xl text-teal-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-2/5">
+                        <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-2xl shadow-lg border border-blue-100">
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-6">Professional Philosophy</h3>
+                            <div class="relative">
+                                <i class="fas fa-quote-left text-blue-300 text-5xl absolute -top-4 -left-2"></i>
+                                <p class="text-gray-700 text-lg pl-8 relative z-10">"I believe in combining evidence-based medicine with compassionate care to help patients regain mobility and return to their active lifestyles."</p>
+                            </div>
+                            <div class="mt-8 flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-award text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-blue-800">10+ Years Experience</p>
+                                    <p class="text-gray-600 text-sm">Dedicated to Orthopedic Excellence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-3/5">
+                        <div class="prose prose-lg max-w-none">
+                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">Dr. Sachin Kumar Yadav is a dedicated orthopedic surgeon specializing in sports medicine and arthroscopic surgeries. With extensive training and experience in the field, he is committed to providing the highest standard of care to his patients.</p>
+                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">After completing his MBBS and MS in Orthopedic Surgery, Dr. Yadav has focused on minimally invasive techniques to treat sports injuries, joint disorders, and degenerative conditions. His approach emphasizes accurate diagnosis, personalized treatment plans, and comprehensive rehabilitation.</p>
+                            <p class="text-gray-700 text-lg leading-relaxed">Dr. Yadav stays at the forefront of orthopedic advancements through continuous education and research. He has contributed to several publications and regularly attends international conferences to exchange knowledge with peers worldwide.</p>
+                        </div>
+                        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <div class="text-3xl font-bold text-blue-800">500+</div>
+                                <div class="text-gray-600">Surgeries</div>
+                            </div>
+                            <div class="text-center p-4 bg-teal-50 rounded-lg">
+                                <div class="text-3xl font-bold text-teal-800">10+</div>
+                                <div class="text-gray-600">Years Experience</div>
+                            </div>
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <div class="text-3xl font-bold text-blue-800">25+</div>
+                                <div class="text-gray-600">Publications</div>
+                            </div>
+                            <div class="text-center p-4 bg-teal-50 rounded-lg">
+                                <div class="text-3xl font-bold text-teal-800">100%</div>
+                                <div class="text-gray-600">Patient Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Professional Experience</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                        <h3 class="text-2xl font-semibold text-blue-800">Consultant Orthopedic Surgeon</h3>
+                        <p class="text-gray-600 font-medium text-lg">College of Medical Sciences, Bharatpur</p>
+                        <p class="text-gray-500 mb-4">2018 - 2023</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                <span>Specialized in arthroscopic surgeries of knee and shoulder joints</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                <span>Performed over 500 successful joint replacement surgeries</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                <span>Established sports injury clinic with comprehensive rehabilitation program</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-teal-500">
+                        <h3 class="text-2xl font-semibold text-blue-800">Lecturer in Orthopedics</h3>
+                        <p class="text-gray-600 font-medium text-lg">COMS, Kathmandu University</p>
+                        <p class="text-gray-500 mb-4">2019 - 2023</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-teal-500 mt-1 mr-3"></i>
+                                <span>Taught orthopedic principles to medical students and residents</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-teal-500 mt-1 mr-3"></i>
+                                <span>Supervised research projects in sports medicine and joint preservation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-teal-500 mt-1 mr-3"></i>
+                                <span>Conducted workshops on arthroscopic techniques</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                        <h3 class="text-2xl font-semibold text-blue-800">Senior Resident</h3>
+                        <p class="text-gray-600 font-medium text-lg">Sawai Man Singh Medical College, Jaipur</p>
+                        <p class="text-gray-500 mb-4">2015 - 2018</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                <span>Gained extensive experience in trauma and emergency orthopedics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                <span>Assisted in complex orthopedic procedures</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                <span>Managed post-operative care and rehabilitation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Specialized Skills & Procedures</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6 text-lg">Advanced techniques and comprehensive care for all orthopedic conditions</p>
+            </div>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border border-blue-100 transition-all duration-300">
+                    <div class="text-blue-600 mb-5">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-bone text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Arthroscopic Surgeries</h3>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>ACL Reconstruction</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Meniscus Repair</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Rotator Cuff Repair</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Shoulder Stabilization</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-gradient-to-br from-teal-50 to-white p-8 rounded-2xl shadow-lg border border-teal-100 transition-all duration-300">
+                    <div class="text-teal-600 mb-5">
+                        <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center">
+                            <i class="fas fa-procedures text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-teal-800 mb-4">Joint Replacement</h3>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Total Knee Replacement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Partial Knee Replacement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Total Hip Replacement</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Revision Joint Surgery</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border border-blue-100 transition-all duration-300">
+                    <div class="text-blue-600 mb-5">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-running text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Sports Medicine</h3>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Sports Injury Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Cartilage Restoration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>PRP Therapy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Rehabilitation Programs</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-gradient-to-br from-teal-50 to-white p-8 rounded-2xl shadow-lg border border-teal-100 transition-all duration-300">
+                    <div class="text-teal-600 mb-5">
+                        <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center">
+                            <i class="fas fa-user-injured text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-teal-800 mb-4">Trauma Care</h3>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Fracture Management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Complex Trauma Reconstruction</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Minimally Invasive Fixation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Pediatric Orthopedics</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg border border-blue-100 transition-all duration-300">
+                    <div class="text-blue-600 mb-5">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-bone text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Spine Care</h3>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Disc Herniation Treatment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Spinal Decompression</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Vertebroplasty</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-400 text-xs mr-3"></i>
+                            <span>Conservative Spine Care</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-gradient-to-br from-teal-50 to-white p-8 rounded-2xl shadow-lg border border-teal-100 transition-all duration-300">
+                    <div class="text-teal-600 mb-5">
+                        <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center">
+                            <i class="fas fa-hand-holding-medical text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-teal-800 mb-4">Non-Surgical Treatments</h3>
+                    <ul class="text-gray-700 space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Joint Injections</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Physical Therapy Guidance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Orthobiologics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-teal-400 text-xs mr-3"></i>
+                            <span>Pain Management</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Education & Training</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-4 rounded-full mr-6">
+                            <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">MS in Orthopedic Surgery</h3>
+                            <p class="text-gray-600 font-medium text-lg">Sawai Man Singh Medical College, Jaipur</p>
+                            <p class="text-gray-500 mb-4">2012 - 2015</p>
+                            <p class="text-gray-700">Specialized training in orthopedic surgery with focus on trauma, joint replacement, and sports medicine.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-teal-100">
+                    <div class="flex items-start">
+                        <div class="bg-teal-100 p-4 rounded-full mr-6">
+                            <i class="fas fa-user-graduate text-teal-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-teal-800 mb-2">MBBS</h3>
+                            <p class="text-gray-600 font-medium text-lg">Government Medical College, Kota</p>
+                            <p class="text-gray-500 mb-4">2005 - 2011</p>
+                            <p class="text-gray-700">Comprehensive medical education with honors in anatomy and surgery.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-4 rounded-full mr-6">
+                            <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">Fellowship in Arthroscopy</h3>
+                            <p class="text-gray-600 font-medium text-lg">Indian Arthroscopy Society</p>
+                            <p class="text-gray-500 mb-4">2016</p>
+                            <p class="text-gray-700">Advanced training in minimally invasive arthroscopic techniques for knee and shoulder.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-teal-100">
+                    <div class="flex items-start">
+                        <div class="bg-teal-100 p-4 rounded-full mr-6">
+                            <i class="fas fa-globe-asia text-teal-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-teal-800 mb-2">International Observership</h3>
+                            <p class="text-gray-600 font-medium text-lg">Seoul National University Hospital</p>
+                            <p class="text-gray-500 mb-4">2017</p>
+                            <p class="text-gray-700">Training in advanced joint preservation techniques and cartilage restoration procedures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Contact Information</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-6">Professional Inquiry</h3>
+                    <p class="text-gray-700 mb-8 text-lg">For consultation appointments or professional collaborations, please reach out through the following channels:</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-5">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg">Email</h4>
+                                <a href="mailto:dr.sachinyadav@example.com" class="text-blue-600 hover:underline text-lg">dr.sachinyadav@example.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-5">
+                                <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg">Clinic Appointment</h4>
+                                <p class="text-gray-700 text-lg">+91 XXXXX XXXXX</p>
+                                <p class="text-gray-500 text-sm">9AM - 5PM, Mon-Sat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-5">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-lg">Location</h4>
+                                <p class="text-gray-700 text-lg">College of Medical Sciences, Bharatpur, Nepal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-6">Connect Professionally</h3>
+                    <p class="text-gray-700 mb-8 text-lg">Follow for updates on orthopedic advancements, health tips, and professional activities:</p>
+                    
+                    <div class="flex space-x-6 mb-10">
+                        <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-full text-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-full text-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-full text-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-researchgate text-2xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-full text-blue-600 transition transform hover:scale-110">
+                            <i class="fab fa-google-scholar text-2xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-6 rounded-2xl border border-teal-100">
+                        <h4 class="font-semibold text-teal-800 text-xl mb-4">Patient Resources</h4>
+                        <p class="text-gray-700 mb-6">For existing patients, you can access your health records and follow-up instructions through our secure portal.</p>
+                        <a href="#" class="inline-block bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg text-sm font-medium transition shadow-md">Patient Portal Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Orthopedic Insights</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6 text-lg">Latest research and health tips from our orthopedic expert</p>
+            </div>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="h-60 bg-gradient-to-r from-blue-400 to-teal-400 flex items-center justify-center">
+                        <i class="fas fa-bone text-7xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>Published: May 15, 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-blue-800 mb-4">Understanding Knee Osteoarthritis</h3>
+                        <div class="blog-content">
+                            <p class="text-gray-700 mb-4">Knee osteoarthritis is a common degenerative joint disease affecting millions worldwide. As we age, the protective cartilage in our joints wears down, leading to pain, stiffness, and reduced mobility.</p>
+                            <h4>Key Prevention Strategies:</h4>
+                            <ul>
+                                <li>Maintain healthy weight to reduce joint stress</li>
+                                <li>Engage in low-impact exercises like swimming</li>
+                                <li>Strengthen quadriceps muscles for better support</li>
+                                <li>Consider glucosamine supplements after consultation</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium text-lg">Read more →</a>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="h-60 bg-gradient-to-r from-teal-400 to-blue-400 flex items-center justify-center">
+                        <i class="fas fa-running text-7xl text-white"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>Published: March 22, 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-teal-800 mb-4">Sports Injury Prevention for Athletes</h3>
+                        <div class="blog-content">
+                            <p class="text-gray-700 mb-4">Whether you're a weekend warrior or competitive athlete, preventing sports injuries should be a top priority. Many common injuries can be avoided with proper preparation and technique.</p>
+                            <h4>Essential Tips:</h4>
+                            <ul>
+                                <li>Always warm up for 10-15 minutes before activity</li>
+                                <li>Use proper footwear designed for your sport</li>
+                                <li>Gradually increase training intensity</li>
+                                <li>Incorporate cross-training to avoid overuse</li>
+                                <li>Listen to your body's warning signs</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-block mt-6 text-teal-600 hover:text-teal-800 font-medium text-lg">Read more →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg shadow-lg transition font-semibold text-lg">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-900 to-teal-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold">Dr. Sachin Kumar Yadav</h3>
+                    <p class="text-blue-200">Orthopedic & Sports Surgeon</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#about" class="hover:text-blue-300 transition font-medium">About</a>
+                    <a href="#experience" class="hover:text-blue-300 transition font-medium">Experience</a>
+                    <a href="#skills" class="hover:text-blue-300 transition font-medium">Skills</a>
+                    <a href="#education" class="hover:text-blue-300 transition font-medium">Education</a>
+                    <a href="#blog" class="hover:text-blue-300 transition font-medium">Blog</a>
+                    <a href="#contact" class="hover:text-blue-300 transition font-medium">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+                <p>© 2023 Dr. Sachin Kumar Yadav. All rights reserved.</p>
+                <p class="mt-2">This website is for informational purposes only and does not replace professional medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Hide mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll animation to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.skill-card, .timeline-item, article').forEach(el => {
+                el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+                observer.observe(el);
+            });
+            
+            // Add animation classes
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fade-in-up {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                .animate-fade-in-up {
+                    animation: fade-in-up 0.8s ease-out forwards;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
